@@ -2,7 +2,7 @@ const { Server } = require("socket.io");
 
 const io = new Server(8000, {
     cors: {
-    origin: ["*","http://localhost:5173", "https://your-frontend-domain.com"],
+    origin: ["http://localhost:5173", "https://phenomenal-meringue-084d5c.netlify.app/"],
     methods: ["GET", "POST"],
     credentials: true
   }
