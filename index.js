@@ -1,6 +1,12 @@
 const { Server } = require("socket.io");
 
-const io = new Server(8000, {cors: true});
+const io = new Server(8000, {
+    cors: {
+    origin: ["*","http://localhost:5173", "https://your-frontend-domain.com"],
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+});
 
 const emailToSocketIdMap = new Map();
 const socketIdToEmailMap = new Map();
@@ -12,10 +18,10 @@ io.on("connection", (socket)=> {
         const { email, room } = data;
         emailToSocketIdMap.set(email, socket.id);
         socketIdToEmailMap.set(socket.id, email);
-        // Notify all Room members:
-        io.to(room).emit("user:joined", { email, id: socket.id })
         // Join Room:
         socket.join(room);
+        // Notify all Room members:
+        io.to(room).emit("user:joined", { email, id: socket.id })
         // Notify self joined the room
         io.to(socket.id).emit("you-joined-room", data );
     });
