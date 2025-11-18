@@ -21,6 +21,7 @@ app.use(
 const io = new Server(server, {
   cors: {
     origin: [
+        "https://paleturquoise-raven-319884.hostingersite.com",
       "https://phenomenal-meringue-084d5c.netlify.app",
       "http://localhost:5173"
     ],
