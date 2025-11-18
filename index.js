@@ -9,6 +9,7 @@ const server = http.createServer(app);
 app.use(
   cors({
     origin: [
+        "https://aleturquoise-raven-319884.hostingersite.com",
       "https://phenomenal-meringue-084d5c.netlify.app",
       "http://localhost:5173"
     ],
