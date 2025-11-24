@@ -41,7 +41,7 @@ app.use("/api/health", healthRoutes);
 // Socket:
 const io = new Server(server, {
   cors: {
-    origin: [CLIENT_URL_LOCAL, CLIENT_URL_HOSTINGER, CLIENT_URL_NETLIFY],
+    origin: [CLIENT_URL_LOCAL, CLIENT_URL_HOSTINGER, CLIENT_URL_NETLIFY, CLIENT_URL_HOSTINGER_NEW],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   },
