@@ -13,6 +13,7 @@ import attachSocket from "./socket.js";
 dotenv.config();
 const PORT = process.env.PORT || 8000;
 const CLIENT_URL_HOSTINGER = process.env.CLIENT_URL_HOSTINGER;
+const CLIENT_URL_HOSTINGER_NEW = process.env.CLIENT_URL_HOSTINGER_NEW;
 const CLIENT_URL_NETLIFY = process.env.CLIENT_URL_NETLIFY;
 const CLIENT_URL_LOCAL = process.env.CLIENT_URL_LOCAL;
 
@@ -24,7 +25,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: [CLIENT_URL_LOCAL, CLIENT_URL_HOSTINGER, CLIENT_URL_NETLIFY],
+    origin: [CLIENT_URL_LOCAL, CLIENT_URL_HOSTINGER, CLIENT_URL_NETLIFY, CLIENT_URL_HOSTINGER_NEW],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
